@@ -15,13 +15,14 @@
 #include <stdio.h>
 #define INF 999999999
 using namespace std;
-typedef pair<int, int> Pair;
+typedef pair<int, string> Pair;
 vector<Pair> PV;
 
 int n,m,g;
 
 bool func(Pair &a,Pair &b){
-    return a.second < b.second || (a.second==b.second && a.first < b.first);
+    return a.first < b.first;
+    // || (a.first==b.first && a.first < b.first);
 }
 
 int main() {
@@ -30,7 +31,8 @@ int main() {
     cin.tie(NULL);
     cin >> n;
     for(int i=0;i<n;i++){
-        int F,S;
+        int F;
+        string S;
         cin >> F >> S;
         PV.push_back(make_pair(F,S));
     }
